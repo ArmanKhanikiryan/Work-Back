@@ -1,15 +1,20 @@
 import bodyParser from 'body-parser'
 import cors from "cors"
 import express from "express"
-import {MongoClient, ObjectId} from 'mongodb'
+import {MongoClient, ObjectId, ServerApiVersion} from 'mongodb'
 import mongoose, {Schema} from 'mongoose'
 import multer from 'multer'
 import pako from 'pako';
 
 
-(async function () {
 
-    const mongoClient = new MongoClient('mongodb://localhost:27017')
+
+
+
+
+(async function () {
+    const uri = "mongodb+srv://main:93285797@profsystem.prx6imm.mongodb.net/?retryWrites=true&w=majority";
+    const mongoClient = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
     const app = express()
     app.use(express.urlencoded({extended: true}))
     app.use(express.json())
@@ -18,7 +23,7 @@ import pako from 'pako';
     app.use(bodyParser.json({ limit: '50mb' }));
     await mongoClient.connect()
     mongoose.set("strictQuery", false);
-    mongoose.connect('mongodb://localhost:27017');
+    mongoose.connect(uri);
     app.set('serverMaxHeaderSize', 1024 * 4096)
 
     const imageSchema = new mongoose.Schema({
