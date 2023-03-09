@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "amazing-plateau-380104",
+  "private_key_id": "91eb04c2e583d75b3d63ecc0c671af4cec2e5fee",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDAwBpwCtRHnjZg\nbUUy5VbOtqlFMEHvaZt98bIwuUBlMBxwwsVaSr2ni/waL4wqBqq5FdnG9nDDITky\nRteg+fCWqkWInhxF5Oo7jO/hrJx+S8iJQJU1CYmLJcOn5rp80Vz78w7Bpzrr5odU\nnIC/BztlftXVNK2Sg3fs1Lz/uhaFrIirqf4rL8n8L3o20kMPmQVXODa2oMZQW5K8\nTDvyCvFViqmTB+ESsZd45dszCXsqzt3pgP6pL8zfpoWdgDUuNyF8MlppsAq3AbGP\n872+V97PKYazPqo4+DYdSCSDSKC/3nE728PNCa5Fx6NnujvU/7SHDzpfUKV1rYlD\nwx3/trIDAgMBAAECggEAN/Gp2rox6cWAV9VvP7nzy5SVpai/gmr+//t+MgkaqSPh\nJVNKr43A5RfKqJkDUBFWTNkMN+TATspeTPrly+mvTDOIcgIeB6VM3NLnrvMICtoZ\nDskpZVbqznG8C4f6uY6Us+XUcx2ECwMCZWr1LTy+nxNEohijhkJVNO58GqcasVok\nkeoe4t81jekQBpidJC0+z2gq0reAod9w9rhwu0GDJNGRVcCFs0kQd/JSumTAVViP\nPcI2p5pjG4CEcaZ80t41M33doZSghmmuc9cISOChfZHU0N9sniHykHV+JeP2KKLI\npnNNH9J29xtYM52jkNpEuBfAxX18SZGawEwdnof+gQKBgQDvlVW3FWh0ANDt9b8t\nQuHVUW3bNihqY5pEZtd7Up99/mEz4+l2Z6M4IqVEvKXpGs3Y4ZkHT6OTGmpPVG+a\nRbNTQuygHdxFcQwZtW2yhLdnZ3B9Px5wykDmwO+KydUjJhQWbV/IzKSOcNOvf+gI\nQJO7MsLunk36iUtXKgKX/+uDgQKBgQDN9T7qQWcn8F2PPWYFCjxWx+pfOzxIVnTx\n5iLALsTpBgLn6IxHV6MXdj7vzbG4gxNBMwjK5GsTHM7ExI+BVtHnb3mz3tnD0bj9\n12vwguOZVoTAm2M/YV8BpWlJm5lLdb/d4c3354k6wSh6Ga/TfkV5nf18Kt8E61lG\nccI4ZwnngwKBgGn06Yum9CMZmU0kOgCSa74j3SntscIbesZ1lSb9S3w1XFfOnBm5\ni/3vlJfptpZ5PECGxV7uYbFVJV8gQJtB6CUSnAPUMO6lKGzWSEWDXHlmzeEWYSgQ\nytNC0K3YxWJeHNQuWwY7Oyujynr7XmsH5E4ODRfq+yGqRp+t/Kesj0QBAoGBAMPu\n2vKqU8OYFLmvVH3Y9fws5dfBF6FNtqVmJYslMyjoEh2jishYJAyu7kLeMYNyFwBA\n182FLiQZlM92m3sVKE1/LI2kpRB4VQAQT1yYeIOo3lQJv4pNTL/ZJ+fhwh0aoPQp\n2/NKbq/ZkHNQOof+KYQAfGUCt/YLG3w7vuQ/ihmXAoGAB7dJ7rISuI0IypGxm47W\nZhy3dc+XDhBr1b4ibw6837BWg/jiArC9cBc4jGQ4d+L7uWzk9jNCsJTs2rjSppjB\nPD6cFp1lLMcue0/+35XwwhbapJbNQ9phu+r4L9+OUN2qR3/X3oBzj7w8r7IndthQ\nXeg3E2BO8jxuJUN3lhRN82o=\n-----END PRIVATE KEY-----\n",
+  "client_email": "slider@amazing-plateau-380104.iam.gserviceaccount.com",
+  "client_id": "103872386820672717416",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/slider%40amazing-plateau-380104.iam.gserviceaccount.com"
+}
