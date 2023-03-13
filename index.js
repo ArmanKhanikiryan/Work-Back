@@ -4,8 +4,8 @@ import express from "express";
 import { MongoClient, ServerApiVersion } from "mongodb";
 import mongoose, { Schema } from "mongoose";
 import multer from "multer";
-import pako from "pako";
 import {Storage} from "@google-cloud/storage";
+
 
 
 
@@ -13,15 +13,12 @@ import {Storage} from "@google-cloud/storage";
 
 
 
-  const storageMainSlider = new Storage({  //MAIN SLIDER KEYS
-    projectId: 'amazing-plateau-380104',
-    keyFilename: './amazing-plateau-380104-1d50eda4af26.json',
-  });
 
-  const storageArplasImages = new Storage({
-    projectId: 'amazing-plateau-380104',
-    keyFilename: './amazing-plateau-380104-91eb04c2e583.json'
-  })
+
+  // const storageArplasImages = new Storage({
+  //   projectId: process.env.STORAGE_ARPLAS_IMAGES_PROJECT_ID,
+  //   keyFilename: process.env.STORAGE_ARPLAS_IMAGES_KEY_FILENAME
+  // })
 
 
   const uri = "mongodb+srv://main:93285797@profsystem.prx6imm.mongodb.net/ProfSystem?retryWrites=true&w=majority"; // Proffsystem database
@@ -56,28 +53,13 @@ import {Storage} from "@google-cloud/storage";
   const upload = multer();
 
 
-  const bucketName = 'your-bucket-name';
-  const serviceAccount = 'slider@amazing-plateau-380104.iam.gserviceaccount.com';
-
-
+  const mainStorage = new Storage({  //MAIN SLIDER KEYS
+    projectId: process.env.STORAGE_MAIN_SLIDER_PROJECT_ID,
+    keyFilename: process.env.STORAGE_MAIN_SLIDER_KEY_FILENAME,
+  });
 //MAIN SLIDER IMAGES COLLECTION
 
 
-  app.get('/images-main', async (req, res) => {
-    try {
-      const [files] = await storageMainSlider.bucket('proffsystem').getFiles();
-      const fileUrls = files.map((file) => {
-        return {
-          name: file.name,
-          url: `https://storage.googleapis.com/${file.bucket.name}/${file.name}`,
-        };
-      });
-      res.json(fileUrls);
-    } catch (err) {
-      console.error(err);
-      res.status(500).send('Internal server error');
-    }
-  });
 
 
 
@@ -107,9 +89,52 @@ import {Storage} from "@google-cloud/storage";
 
 
 
+
+  // app.get('/images/:id', async (req, res) => {
+  //   if (req.params.id){
+  //     console.log(req.params.id, "PARAMS")
+  //     let bucketName = ''
+  //     if (req.params.id === 'main-slide') bucketName = 'main-slide'
+  //     else if (req.params.id === 'arplas') bucketName = 'arplas'
+  //     try {
+  //       const [files] = await mainStorage.bucket(bucketName).getFiles();
+  //       const fileUrls = files.map((file) => {
+  //         return {
+  //           name: file.name,
+  //           url: `https://storage.googleapis.com/${file.bucket.name}/${file.name}`,
+  //         };
+  //       });
+  //       res.json(fileUrls);
+  //     } catch (err) {
+  //       console.error(err);
+  //       res.status(500).send('Internal server error');
+  //     }
+  //   }
+  // });
+
+
   app.get('/images-arplas', async (req, res) => {
     try {
-      const [files] = await storageArplasImages.bucket('slideriimages').getFiles();
+      const [files] = await mainStorage.bucket('arplas').getFiles();
+      const fileUrls = files.map((file) => {
+        return {
+          name: file.name,
+          url: `https://storage.googleapis.com/${file.bucket.name}/${file.name}`,
+        };
+      });
+      res.json(fileUrls);
+    } catch (err) {
+      console.error(err);
+      res.status(500).send('Internal server error');
+    }
+  });
+
+
+
+  app.get('/images-main', async (req, res) => {
+
+    try {
+      const [files] = await mainStorage.bucket('main-slide').getFiles();
       const fileUrls = files.map((file) => {
         return {
           name: file.name,
